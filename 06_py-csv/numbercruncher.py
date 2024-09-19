@@ -23,7 +23,10 @@ def createDict(text):
             pair = i.split('",')
             pair[0] = pair[0][1:]
             print(pair)
-        
+            dicts[pair[0]] = pair[1]
+    
+    print(dicts)
+            
         
         
     #print(dicts)
