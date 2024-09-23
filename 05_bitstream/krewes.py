@@ -1,29 +1,43 @@
-f = open("krewes.txt", "r")
-j = f.read()
+'''Ankita Saha, Andy Shyklo, Abidur Rahman
+  Python Pigs
+  SoftDev
+  Reading Files and Practicing W/ Random
+  2024-9-16
+  time spent: 0.75
+  hours
+  '''
 
-t = 0
-g = j.split("@@@")[:-1]
-
-print(g)
-
-h = []
-for hx in g:
-    gx = hx.split("$$$")
-    print(hx.split("$$$"))
-    h.append(gx)
-
-print(h)
-
-dictP = {4: [], 5: []}
-
-for gx in h:
-    print(gx[0])
-    print(gx)
-    if gx[0] == "4":
-        dictP[4].append({gx[1]: gx[2]})
-    elif gx[0] == "5":
-        dictP[5].append({gx[1], gx[2]})
-    else:
-        print("h")
+def bitstream(){
+    f = open("krewes.txt", "r")
+    r = f.read().split('@@@')
     
-print(dictP)
+    arr = []
+    
+    for i in r:
+        j = i.split("$$$")
+        arr.append(arr)
+            
+    d = {4:[],5:[]}
+    for k in arr:
+        if k[0] == 4:
+            d[4].append({k[1]: k[2]})
+        elif k[0] == 5:
+            d[5].append({k[1]: k[2]})
+            
+    num = random.randint(4,5)
+    p = random.randint(len(d.get(num))-1)
+
+    k = list(d.get(num)[p])[0]
+    v = list(d.get(num)[p])[1]
+
+    return "PERIOD: " + num + "; NAME: " + k + "; VALUE: " + v
+        
+
+    '''
+list=[dictionary_4, dictionary_5]
+dictionary_4={name:ducky,]
+splice first at $$$ and put intwo tuple of length 3
+splice at @@@, put tuples in list
+
+'''
+    }
