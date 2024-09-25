@@ -1,4 +1,4 @@
-# Clyde 'Thluffy' Sinclair
+# Michelle Zhu, Jacob Lukose, Abidur Rahman, Evan Chan
 # SoftDev
 # September 2024
 
