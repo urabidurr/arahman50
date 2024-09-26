@@ -8,4 +8,11 @@
                  ?
 -->
 
+<!--
+When we access that url, our prediction is that it will not access this html, but rather more directly access the app route established in ../app.py, 
+since it has the location of static/foo.html, and is more direct than accessing this file.
+But, when the app.route of this file is commented out in the app.py file, it no longer runs the code in that method but rather runs to the next option, which is this file.
+So, when the app route isn't specifically defined with a method in the main file, it will search for html files that match the same location as would the methods.
+-->
+
 </html>
