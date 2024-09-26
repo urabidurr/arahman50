@@ -5,13 +5,13 @@
 """
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Q0:
-<your response here>
+    The render template is not imported because it is part of the flask. The error would be in line 24.
 
 Q1:
-<your response here>
+    We predict the URL used to load the page will be http://127.0.0.1:5000/my_foist_template
 
 Q2:
-<your response here>
+    The html is the parameter for which the template has values for.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 """
 
