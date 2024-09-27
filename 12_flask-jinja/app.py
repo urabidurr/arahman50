@@ -11,7 +11,7 @@ Q1:
     We predict the URL used to load the page will be http://127.0.0.1:5000/my_foist_template
 
 Q2:
-    The html is the parameter for which the template has values for.
+    The first argument is an html template. The second argument is one of the variables within the template, replacing the variable with the string. The third argument is replacing the collection variable with the previously defined coll.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 """
 
