@@ -1,18 +1,30 @@
-# Clyde 'Thluffy' Sinclair
-# SoftDev
-# Sep 2024
-
 """
+Abidur Rahman
+MTA
+SoftDev
+K12 - Flask Render Template
+2024-09-26
+time spent: 0.5
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Q0:
-    The render template is not imported because it is part of the flask. The error would be in line 24.
+This will cause an error because render_template is not defined in the test_implt() function since it is not imported.
+render_template is a function from flask and must be specified in order to be imported like Flask
 
 Q1:
-    We predict the URL used to load the page will be http://127.0.0.1:5000/my_foist_template
+http://localhost:5000/my_foist_template
 
 Q2:
-    The first argument is an html template. The second argument is one of the variables within the template, replacing the variable with the string. The third argument is replacing the collection variable with the previously defined coll.
+The first argument is the path to the template (the html file) to be rendered.
+The second argument passes "fooooo" into the foo variable in the template file.
+The third argument passes the coll array into the collections variable in the template file.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Observed:
+When render_template is removed from input, localhost:5000/my_foist_template displays a NameError and a long
+erorr message is printed in terminal.
+
+When localhost:5000/my_foist_template is loaded, the title is foooo, and 0 1 1 2 3 5 8 is displayed on
+different lines.
 """
 
 
