@@ -1,23 +1,28 @@
-< your heading here >
+Abidur Rahman
+Python Pigs - Andy Shyklo, Ankita Saha, Abidur Rahman
+SoftDev
+2024-10-07
+K14 - Client Server Requests and Dynamic Elements
+Time Spent: .25 hrs
 
 DISCO:
-* 
-* 
-* 
+* Form submitted correctly when the username was provided.
+* KeyError occurred when no username was present in request.args.
+* If you try submitting the form using a POST request instead of GET, the app does not handle the request because the route is set up for GET only.
 -----------------------------------------------------------------------
 
 
 Q/C/C:
-* 
-* 
-* 
+* Should we handle POST requests as well?
+* How can we make custom error messages in python? (Try/Catch?) 
+* How should we introduce session management to prevent duplicate form submissions?
 -----------------------------------------------------------------------
 
 
 OTHER?
-* 
-* 
-* 
+* Securely sending sensitive info like passwords to the server.
+* Ask server to refresh client site after submission, instead of just setting Debug mode to true.
+* Store client data to the server to call back from later on.
 -----------------------------------------------------------------------
 
 
