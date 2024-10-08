@@ -39,7 +39,7 @@ PROTIP: Insert your own in-line comments
    understand what is going on.
 '''
 
-@app.route("/") #, methods=['GET', 'POST'])
+@app.route("/"), methods=['GET', 'POST']) #uncommented to us these to sent information to the server
 # Prediction: This should work fine as long as the login.html file exists
 # in a templates folder. If the file is missing, Flask will
 #throw an error.
@@ -58,11 +58,17 @@ def disp_loginpage():
     return render_template( 'login.html' )
 
 
-@app.route("/auth") # , methods=['GET', 'POST'])
+@app.route("/auth"), methods=['GET', 'POST'])
 # Prediction: This will work if the form submits via GET request and
 #includes a username argument. If the form uses POST,
 #or if the username field is missing, this will throw an error.
 def authenticate():
+ if request.method == 'GET':
+        user = request.args['username']
+        return "Hi " + user + "!"
+ else:
+        return "Ooops you don't exist."
+  
     #print("\n\n\n")
     #print("***DIAG: this Flask obj ***")
     #print(app)
@@ -74,7 +80,7 @@ def authenticate():
     #print(request.args['username'])
     #print("***DIAG: request.headers ***")
     #print(request.headers)
-    return "Waaaa hooo HAAAH"  #response to a form submission
+return "Waaaa hooo HAAAH"  #response to a form submission
 
 
     
