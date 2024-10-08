@@ -1,0 +1,9 @@
+QCCs:
+1. To create the data table, we had to use a for loop within the HTML file where we added a new tr tag for every job
+2. we had to ensure that we were correctly passing in arguments into the functions we used to display the random job, as that was something that initally caused us some errors. 
+3. i am curious as to what happens as the site gets more and more complex. right now, we are just sending in the headers and paragraphs and tables in one line with the render template, but what happens when you have multiple headers, and tables, and paragraphs, and etc.? 
+  --> do you still put it all into one line? what about when you have multiple webpages on a website? how do you link everything?
+
+4. to get the colums of both % and links, we made the value a list of the percentage and links and when we call them in our HTML, we could use the index
+EGO:
+to create the table, you could just have multiple <tr> tags, but to be more efficient, you can use a for loop within your html file where you call a new job everytime.
