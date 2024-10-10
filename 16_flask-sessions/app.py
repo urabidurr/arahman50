@@ -11,13 +11,15 @@
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
 from flask import request           #facilitate form submission
-
+from flask import session
+import os
 
 #the conventional way:
 #from flask import Flask, render_template, request
 
 app = Flask(__name__)    #create Flask object
 
+app.secret_key = os.urandom(32)
 
 '''
 trioTASK:
@@ -44,6 +46,7 @@ PROTIP: Insert your own in-line comments
 # in a templates folder. If the file is missing, Flask will
 #throw an error. reused old code
 def disp_loginpage():
+    print("printed")
     return render_template( 'login.html' )
 
 
@@ -54,12 +57,31 @@ def disp_loginpage():
 def authenticate():
     if request.method == 'GET':
         user = request.args['username']
+        password = request.args['password']
+        session[app.secret_key] = password
     elif request.method == 'POST':
         user = request.form.get('username')
+        password = request.form.get('password')
+        print(user, password)
+        session[app.secret_key] = password
     else:
         return "error!"
     return render_template('response.html', user = user) 
 
+
+@app.route("/logout",  methods=['GET', 'POST'])
+def logout():
+if request.method == 'GET':
+    print("received GET")
+    session.pop(app.secret_key)
+    print(session)
+else if request.method == 'POST':
+    print("received POST")
+    session.pop(app.secret_key)
+    print(session)
+    
+    
+    
 if __name__ == '__main__':
     app.debug = True
     app.run()

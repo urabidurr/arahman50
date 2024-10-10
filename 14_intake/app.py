@@ -44,6 +44,7 @@ PROTIP: Insert your own in-line comments
 # in a templates folder. If the file is missing, Flask will
 #throw an error.
 def disp_loginpage():
+    print("Hello")
     #print("\n\n\n")
     #print("***DIAG: this Flask obj ***")
     #print(app)
@@ -56,6 +57,7 @@ def disp_loginpage():
     #print("***DIAG: request.headers ***")
     #print(request.headers)
     return render_template( 'login.html' )
+
 
 
 @app.route("/auth") #methods=['GET', 'POST'])
