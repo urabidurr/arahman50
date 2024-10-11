@@ -11,23 +11,11 @@
     </h1>
 
     
-      Hello {{user}}!
-      <br>
-      used get method
-      <br>
-      <br>
-      get: gets data passed from the code base -> gets the info in request.args, from the url -> to display the content on page, less sensitive info
-      <br>
-      post: sends data back throuhg request body to server -> prob for passwords?
+      Hello {{session.username}}!
       
+      <button>Logout</button>
         
     <br>
-    <br></br>
-    
-    <form action="/logout" method="POST">
-       <input type="button" value = "Logout" name="Logout">
-    </form>
-    
   </body>
 
 </html>
