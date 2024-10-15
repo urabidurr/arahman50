@@ -1,8 +1,9 @@
-# Abidur Rahman
-# SoftDev
-# October 8 2024
-#Time Spent: 0.5 hrs
-
+#Abidur Rahman
+#Python Pigs - Andy Shyklo, Ankita Saha, Abidur Rahman
+#SoftDev
+#2024-10-11
+#K16 - GET and POST
+#Time Spent: .75 hrs
 # import conventions:
 # list most general first (standard python library)
 # ...then pip installs (eg Flask)
@@ -48,7 +49,7 @@ PROTIP: Insert your own in-line comments
 #throw an error. reused old code
 def disp_loginpage():
     if 'username' in session:
-        return render_template('response.html', username=session['username'], pass1=session['password'])
+        return render_template('response.html', username=session['username'])
     return render_template('login.html')
 
 @app.route("/auth",  methods=['GET', 'POST'])
@@ -58,32 +59,23 @@ def disp_loginpage():
 def authenticate():
     if request.method == 'GET':
         user = request.args['username']
-        pass1 = request.args['password']
+       # pass1 = request.args['password']
         session['username'] = user
-        session['password'] = pass1
+       # session['password'] = pass1
     elif request.method == 'POST':
         user = request.form.get('username')
-        pass1 = request.form.get('password')
+       # pass1 = request.form.get('password')
         session['username'] = user
-        session['password'] = pass1
+       # session['password'] = pass1
     else:
         return "error!"
-    return render_template('response.html', user = session['username'], pass1 = session['password']) 
+    return render_template('response.html', user = session['username']) 
+
+@app.route("/logout",  methods=['GET', 'POST'])
 
 def disp_logoutpage():
-    if request.method == 'GET':
-        user = request.args['username']
-        pass1 = request.args['password']
-        session['username'] = user
-        session['password'] = pass1
-    elif request.method == 'POST':
-        user = request.form.get('username')
-        pass1 = request.form.get('password')
-        session['username'] = user
-        session['password'] = pass1
-    else:
-        return "error!"
-    return render_template('response.html', user = session['username'], pass1 = session['password']) 
+    session.clear()
+    return render_template('logout.html') 
 
 if __name__ == '__main__':
     app.debug = True
