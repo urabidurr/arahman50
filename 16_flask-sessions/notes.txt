@@ -1,1 +1,10 @@
+Abidur Rahman
+Python Pigs - Andy Shyklo, Ankita Saha, Abidur Rahman
+SoftDev
+2024-10-11
+K16 - GET and POST
+Time Spent: .75 hrs
+Plan:
+use cookies, store user and password somehow until the info is removed/cleared behind the scenes/in the terminal. redierect it to a new page after.
 
+Use the POST to take info and make it more secure for users. use session library from flask to keep users in session and use cookies to keep them logged in. make session['username'] equal to the username/password given through the server. we then redirected to response page. we added a logout button. to logout, we cleared the session, removing the login info (username), and then redirected to the lgout page to let the user know that they have logged out
