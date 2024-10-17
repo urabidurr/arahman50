@@ -1,27 +1,86 @@
 <!DOCTYPE html>
+
+<!--
+Abidur Rahman
+Python Pigs
+SoftDev
+17: Style Layer
+10/15/24
+Time spent: 1
+-->
+
 <html>
-<body style="background-color: gray">
-    <header style="background-color: lightgray; padding: 20px; text-align: center;">
-        <h1 style="margin: 0; color: white; font-size: 2em;">h1 foo</h1>
-    </header>
+	<head>
+        <style>
+            html {
+                background-color: #646464;
+                margin: 10px;
+                font-family: Verdana;
+            }
+            
+            body {
+                background-color: #7f7f7f;
+                margin: 0;
+                margin-top: -0.5%;
+            }
+            
+            #site-title {
+                background-color: #cbcbcb;
+                height: 60px;
+                position: top;
+                text-align: center;
+                color: white;
+            }
+            
+            .nav, .text {
+                display: inline-block;
+                vertical-align: top;
+                margin-top: -2%;
+                padding: 0.5%;
+            }
+            #nav-title {
+                color: black;
+            }
+            h3 {
+                color: #d4d4d4;
+            }
+            .nav {
+                padding-right: 4%;
+            }
+            .text {
+                width: 85%;
+            }
+            
+            #copyright {
+                padding: 7px;
+                font-size: 1.2em;
+                height: 35px;
+                color: #646464;
+                background-color: #4c4c4c;
+                text-align: right;
+            }
+        </style>
+    </head>
 
-    <nav style="float: left; width: 20%; background-color: #444; padding: 20px;">
-        <h2 style="margin-top: 0; color: #ccc;">nav foo</h2>
-        <ul style="list-style-type: none; padding: 0;">
-            <li style="margin-bottom: 10px;">dis</li>
-            <li style="margin-bottom: 10px;">dat</li>
-            <li style="margin-bottom: 10px;">de udda ting</li>
-        </ul>
-    </nav>
+	<body>
+		<h1 id="site-title">Foo Bar H One</h1>
 
-    <main style="float: left; width: 60%; padding: 20px;">
-        <h2 style="margin-top: 0; color: #fff;">main foo heading</h2>
-        <p>Bacon ipsum dolor amet rump andouille short loin shank pig. Pork loin turkey shank spare ribs. Chicken tail corned beef hamburger porchetta prosciutto meatball ham biltong leberkas swine filet mignon short loin...</p>
-        <p>Ham hock bresaola turkey andouille jerky pancetta shoulder alcatra salami pork landjaeger tongue t-bone meatball...</p>
-    </main>
+		<div class="nav">
+			<h3 id="nav-title">nav foo</h3>
+			<h3>
+				dis<br>
+				dat<br>
+				de udda thing
+			</h3>
+		</div>
 
-    <footer style="background-color: lightgray; padding: 10px; text-align: right;">
-        <h1 style="margin: 0; color: white; font-size: 2em;">Copyright @ 2015 Clyde "Thluffy" Sinclair</h1>
-    </footer>
-</body>
+		<div class="text">
+			<h2 id="main-text-title">main foo heading</h2>
+			<p> Bacon ipsum dolor amet rump andouille short loin shank pig. Pork loin turkey shank spare ribs. Chicken tail corned beef hamburger porchetta prosciutto meatball ham biltong leberkas swine filet mignon short loin...</p>
+			<br><br>
+			<p> Ham hock bresaola turkey andouille jerky pancetta shoulder alcatra salami pork landjaeger tongue t-bone meatball...</p>
+		</div>
+
+		<p id="copyright">Copyright ©2015 Clyde "Thluffy" Sinclair</p>
+	</body>
 </html>
