@@ -30,18 +30,18 @@ with open('courses.csv', 'r') as csvfile:
         rows.append(row)
         print(row)
 
-# command = "CREATE TABLE courses(code, mark, id)"          # test SQL stmt in sqlite3 shell, save as string
-# c.execute(command)    # run SQL statement
-# 
-# c.execute("""
-# INSERT INTO courses VALUES
-#     ('systems', '75', '1'),
-#     ('softdev', '65', '1')
-# """)
+command = "CREATE TABLE IF NOT EXISTS courses(code, mark, id)"          # test SQL stmt in sqlite3 shell, save as string
+c.execute(command)    # run SQL statement
+
+c.execute("""
+INSERT INTO courses VALUES
+    ('systems', '75', '1'),
+    ('softdev', '65', '1')
+""")
 db.commit()
 
 res = c.execute("SELECT code FROM courses")
-res.fetchall()
+print(res.fetchall())
 #==========================================================
 
 db.commit() #save changes
