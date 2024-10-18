@@ -20,10 +20,28 @@ c = db.cursor()               #facilitate db ops -- you will use cursor to trigg
 < < < INSERT YOUR TEAM'S DB-POPULATING CODE HERE > > >
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 """
+fields = []
+rows = []
 
-command = ""          # test SQL stmt in sqlite3 shell, save as string
-c.execute(command)    # run SQL statement
+with open('courses.csv', 'r') as csvfile:
+    csvreader = csv.reader(csvfile)
+    fields = next(csvreader)
+    for row in csvreader:
+        rows.append(row)
+        print(row)
 
+# command = "CREATE TABLE courses(code, mark, id)"          # test SQL stmt in sqlite3 shell, save as string
+# c.execute(command)    # run SQL statement
+# 
+# c.execute("""
+# INSERT INTO courses VALUES
+#     ('systems', '75', '1'),
+#     ('softdev', '65', '1')
+# """)
+db.commit()
+
+res = c.execute("SELECT code FROM courses")
+res.fetchall()
 #==========================================================
 
 db.commit() #save changes
