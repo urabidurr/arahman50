@@ -1,7 +1,11 @@
-#Clyde "Thluffy" Sinclair
-#SoftDev
-#skeleton/stub :: SQLITE3 BASICS
-#Oct 2024
+'''
+  Ankita Saha, Andy Shyklo, Abidur Rahman
+  Python Pigs
+  SoftDev
+  K19 - Working with SQL and CSV files
+  2024-10-20
+  time spent: 1 hour
+'''
 
 import sqlite3   #enable control of an sqlite database
 import csv       #facilitate CSV I/O
@@ -20,29 +24,44 @@ c = db.cursor()               #facilitate db ops -- you will use cursor to trigg
 < < < INSERT YOUR TEAM'S DB-POPULATING CODE HERE > > >
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 """
-fields = []
-rows = []
+c.execute("DELETE FROM courses")
+c.execute("DELETE FROM students")
 
-with open('courses.csv', 'r') as csvfile:
-    csvreader = csv.reader(csvfile)
-    fields = next(csvreader)
-    for row in csvreader:
-        rows.append(row)
-        print(row)
+with open("courses.csv", mode = 'r') as file:
+    command = "CREATE TABLE IF NOT EXISTS courses (code TEXT, mark NUMBER, id NUMBER)"          # test SQL stmt in sqlite3 shell, save as string
+    c.execute(command)
+    reader = csv.DictReader(file)
+    headers = reader.fieldnames
+    for row in reader: 
+        str = "('"
+        str += row.get(headers[0]) + "', "
+        str += row.get(headers[1]) + ", "
+        str += row.get(headers[2]) + ")"
+        query = f"INSERT INTO courses VALUES {str}" 
+        c.execute(query)
 
-command = "CREATE TABLE IF NOT EXISTS courses(code, mark, id)"          # test SQL stmt in sqlite3 shell, save as string
-c.execute(command)    # run SQL statement
+with open("students.csv", mode = 'r') as file:
+    command = "CREATE TABLE IF NOT EXISTS students (name TEXT, age NUMBER, id NUMBER)"          # test SQL stmt in sqlite3 shell, save as string
+    c.execute(command)
+    reader = csv.DictReader(file)
+    headers = reader.fieldnames
+    for row in reader: 
+        str = "('"
+        str += row.get(headers[0]) + "', "
+        str += row.get(headers[1]) + ", "
+        str += row.get(headers[2]) + ")"
+        query = f"INSERT INTO students VALUES {str}" 
+        c.execute(query)
 
-c.execute("""
-INSERT INTO courses VALUES
-    ('systems', '75', '1'),
-    ('softdev', '65', '1')
-""")
-db.commit()
 
-res = c.execute("SELECT code FROM courses")
-print(res.fetchall())
 #==========================================================
 
 db.commit() #save changes
+
+res = c.execute("SELECT code, mark, id FROM courses")
+print(res.fetchall())
+
+rest = c.execute("SELECT name, age, id FROM students")
+print(rest.fetchall())
+
 db.close()  #close database
