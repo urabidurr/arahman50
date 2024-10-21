@@ -1,0 +1,33 @@
+https://www.geeksforgeeks.org/what-is-cursor-in-sql/
+
+this link helped us understand some of the components of SQL
+
+'''
+  Ankita Saha, Andy Shyklo, Abidur Rahman
+  Python Pigs
+  SoftDev
+  K19 - Working with SQL and CSV files
+  2024-10-20
+  time spent: 1 hour
+'''
+
+Disco:
+To clear a table, you can use the command DELETE FROM (name) in order to clear the table,
+since tables add up each time you run the program, without clearing.
+You can execute multiple times as an individual command, and when you commit, your
+commands save and your file saves, and when you close it, it cannot take anymore inputs.
+You can use CREATE TABLE IF NOT EXISTS (name) (parameters with type and name) in order
+to make a new table with custom values, and when used in a command, will create a table
+that you can add values into.
+csv.DictReader(file) can basically turn your csv into a set of dicts.
+csv.DictReader(file).fieldnames can give the column names for your csv file as an array.
+You can use INSERT INTO (name) VALUES (values) to insert values underneath a column which
+should be in the format of '(value 1, value 2, value 3)' for each thing you input.
+You can use db.commit() to save the changes that you made with executing, so nothing after
+that commit stage will be saved.
+You can use SELECT (values) FROM (name) to select all the values in the table. These values
+are relative to the column name, and can be removed or changed in order and will still work
+fine.
+You can use .fetchall() with the selected values to gather all those values, which allows
+you to print it out.
+You can close the database with .close() to not allow any commits or executions to happen.
