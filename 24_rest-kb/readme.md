@@ -11,9 +11,9 @@ The Marketstack API lets inspiring and cultured devos to retrieve and interact w
 
 ### Key Provisioning:     
 
-- An aspect of the process worth pointing out.
-- Another thing you’ll need to know/do to get a key.
-- ...
+- A key can be provided by signing up to the website on the free plan. After you registered, you will get redirected to the user dashboard where your API Access Key is displayed.
+- You can ignore the fields relating to a company when you register for a key, but make sure your complete the captcha to prove that you are not a robot.
+  
 
 ### Quotas:
 - 100 Requests / month
@@ -23,11 +23,14 @@ The Marketstack API lets inspiring and cultured devos to retrieve and interact w
 ---
 
 ## The Good:
-- ...
+- Access to data from 70 stock exchanges across various regions.
+- Ability to pull both real-time stock quotes and historical data.
+- The API provides data in a simple JSON format.
 ## The Bad:
-- ...
+- The free plan only provides 100 requests per month.
+- Only one year of historical data is available for the free plan.
 ## The Ugly:
-- ...
+- You can't make an API request through HTTPS protocol unless you subscribe to the Basic Plan or Higher.
 
 
 **Location:** https://marketstack.com/documentation
