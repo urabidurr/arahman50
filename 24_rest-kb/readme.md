@@ -2,7 +2,7 @@ Collected Knowledge & Wisdom on
 # API_NAME_HERE
 ---
 ## Provides:
-This API provides...
+The Marketplace API lets inspiring and cultured devos to retrieve and interact with worldwide stock market data in JSON format, either precisely from  the past or in real time from the present.
 
 
 
@@ -16,7 +16,9 @@ This API provides...
 - ...
 
 ### Quotas:
-- ...
+- 100 Requests / month
+- 70 Stock Exchanges
+- 1 Year History
 
 ---
 
@@ -28,18 +30,11 @@ This API provides...
 - ...
 
 
-**Location:** https://
+**Location:** https://marketstack.com/documentation
 
 ---
 
-Accurate as of (last update):    2024-mm-dd
+Accurate as of (last update):    2024-11-21
 
-Contributors:
+Contributors: Abidur Rahman, pd5
 
-the two spaces after each name are important!  
-Clyde "Thluffy" Sinclair  
-Annie Jump Cannon, pd5  
-Buttercup, pd2  
-Blossom, pd2  
-Bubbles, pd2  
-Fake Grimlock, pd4  
