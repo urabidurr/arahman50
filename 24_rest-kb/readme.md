@@ -1,12 +1,12 @@
 Collected Knowledge & Wisdom on
-# API_NAME_HERE
+# Marketstack API
 ---
 ## Provides:
-The Marketplace API lets inspiring and cultured devos to retrieve and interact with worldwide stock market data in JSON format, either precisely from  the past or in real time from the present.
+The Marketstack API lets inspiring and cultured devos to retrieve and interact with worldwide stock market data in JSON format, either precisely from  the past or in real time from the present.
 
 
 
-### Pain factor: _
+### Pain factor: 2
 (0=ezpz...5=nightmare)
 
 ### Key Provisioning:     
