@@ -1,1 +1,7 @@
-
+Questions:
+  What are the advantages of using recursion over iteration in JavaScript?
+  Are there specific scenarios where recursion is preferred?
+Comments:
+  It's important to ensure that the base case is defined to avoid infinite recursion.
+Concerns:
+  Recursive functions can lead to performance issues, especially with large datasets or deep recursion levels. How will we tackle sorting while making the app run smoothly?
