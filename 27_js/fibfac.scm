@@ -8,6 +8,9 @@
 
 ;factorial:
 (define fact (lambda (n)
+               (if (or (= n 1) (= n 0))
+                   n
+                   (* n (fact (- n 1))))))
 ;<your team's fact(n) implementation>
 
 ;TEST CALLS
@@ -25,6 +28,9 @@
 ;<your team's fib(n) implementation>
 
 (define fib(lambda (n)
+             (if (= n 0)
+                 n
+                 (+ (fib(- n 1)) (fib(- n 2))))))
 ;<your team's fib(n) implementation>
 
 ;TEST CALLS
