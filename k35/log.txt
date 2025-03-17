@@ -1,0 +1,19 @@
+Danny Huang, Abidur Rahman
+BabyShark
+SoftDev
+K35 - mxrobbotto : Creating Flask App with Copilot
+Time Spend: 7 hrs
+
+DISCO:
+-Sometimes content from previous discussion is not remembered and the same mistakes are made
+-Was not able to fix import problems even when given input that previous code was incorrect
+-Pages are not connected initially
+
+Q/C/C:
+some areas of interest...
+q0: How many tries did it take to "get it right?"
+Twenty + attempts were made and the code was not successful.
+
+q1: Did you catch any errors? If so, how did you notice, and what did you do?
+CreateUser was not defined, pages are not connected, html templates not generated when called, import errors (importing app as a package?)
+q2: 
