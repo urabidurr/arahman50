@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <h1>All Posts</h1>
+    {% for post in posts %}
+    <article class="post">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content }}</p>
+        <small>Posted on {{ post.date_posted }}</small>
+    </article>
+    {% endfor %}
+{% endblock %}
