@@ -1,0 +1,75 @@
+Steps:
+1) Install Components from Ubuntu Repos
+    - sudo apt update
+    - sudo apt install python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools
+2) Create Python Virtual Environment (Already done)
+3) Setup Flask app
+    - Install wheel, uwsgi, flask
+    - Create Flask app with app.run(host='0.0.0.0')
+    - sudo ufw allow 5000 to allow access to port 5000
+4) Configure uWSGI
+    - Create wsgi.py file 
+    - import app, and run app
+    - Create entry point and specify socket and protocol
+        - uwsgi --socket 0.0.0.0:[INSERT PORT HERE] --protocol=http -w wsgi:app
+    - Test that it works
+        - http://[SERVER IP]:[PORT]
+    - Create uWSGI Config file: .ini
+        - [uwsgi]
+          module = wsgi:app
+          master = true
+          processes = 5
+    - Define as socket 
+        - socket = myproject.sock
+          chmod-socket = 660
+          vacuum = true
+          die-on-term = true
+5) Create systemd Unit file
+        - Within /etc/systemd/system directory, create unit file ending in .service
+            - [Unit]
+              Description=uWSGI instance to serve myproject
+              After=network.target
+              [Service]
+              User=[USERNAME]
+              Group=www-data
+              WorkingDirectory=/home/sammy/myproject
+              Environment="PATH=/home/sammy/myproject/myprojectenv/bin"
+              ExecStart=/home/sammy/myproject/myprojectenv/bin/uwsgi --ini myproject.ini
+              [Install]
+              WantedBy=multi-user.target
+        - change group associated with directory
+            - sudo chgrp www-data /home/sammy
+        - start service
+            - sudo systemctl start myproject
+        - enable it
+            - sudo systemctl enable myproject
+        - check status
+            - sudo systemctl status myproject
+6) Configure Nginx to proxy requests
+    - Create server block configuration
+          - sudo nano /etc/nginx/sites-available/myproject
+    - Open up server block and tell it to listen to port 80, add location block
+          - server {
+                listen 80;
+                server_name your_domain www.your_domain;
+
+                location / {
+                    include uwsgi_params;
+                    uwsgi_pass unix:/home/sammy/myproject/myproject.sock;
+                }
+            }
+    - Link file to sites enabled directory
+        - sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+    - Remove default link:
+        - sudo unlink /etc/nginx/sites-enabled/default
+    - Test for syntax errors:
+        - sudo nginx -t
+    - Restart Nginx
+        - sudo systemctl restart nginx
+    - adjust firewall
+        - sudo ufw delete allow 5000
+          sudo ufw allow 'Nginx Full'
+    - Test link:
+        - http://[DOMAIN]
+
+
