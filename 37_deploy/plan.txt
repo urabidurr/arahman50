@@ -1,0 +1,5 @@
+1) Read through tutorial and note down key steps
+2) Using key steps, attempt to deploy myFoistApp on one devo's machine
+    a) Using IP Address instead of domain name
+3) Troubleshoot if there are any problems
+4) Repeat Steps 2-3 for other devos
